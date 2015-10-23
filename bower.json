@@ -1,0 +1,20 @@
+{
+  "name": "fysicsphriend",
+  "version": "1.0.0",
+  "authors": [
+    "godfb <brandon.godfrey@autodesk.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
