@@ -79,11 +79,12 @@ var TheForm = React.createClass({
                   React.findDOMNode(self.refs.result).value = resultString;
               }
               else {
-                    React.findDOMNode(self.refs.d).disabled = false;
-                    React.findDOMNode(self.refs.a).disabled = false;
-                    React.findDOMNode(self.refs.t).disabled = false;
-                    React.findDOMNode(self.refs.vf).disabled = false;
-                    React.findDOMNode(self.refs.vi).disabled = false;
+                  React.findDOMNode(self.refs.result).value = "";
+                  React.findDOMNode(self.refs.d).disabled = false;
+                  React.findDOMNode(self.refs.a).disabled = false;
+                  React.findDOMNode(self.refs.t).disabled = false;
+                  React.findDOMNode(self.refs.vf).disabled = false;
+                  React.findDOMNode(self.refs.vi).disabled = false;
               }
             },
             error: function (data) {

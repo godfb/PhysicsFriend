@@ -38,68 +38,87 @@ app.post('/solve', function(req, res) {
         
         while(somethingNew){
             
-            if (vi && a && t && !vf){
+            if (vi && a && t && vf === ""){
                 returnObj.vf = parseFloat(vi)+parseFloat((a*t));
+                vf = returnObj.vf;
             }
-            else if(a && t && vf && !vi){
+            else if(a && t && vf && vi === ""){
                 returnObj.vi = parseFloat(vf)-parseFloat((a*t));
+                vi = returnObj.vi;
             }
-            else if(t && vf && vi && !a){
+            else if(t && vf && vi && a === ""){
                 if (t !== 0){
+                    console.log("here");
                     returnObj.a = parseFloat((vf-vi)/parseFloat(t));
+                    a = returnObj.a;
                 }
             }
-            else if(vf && vi && a && !t){
+            else if(vf && vi && a && t === ""){
                 if (a !== 0){
                     returnObj.t = parseFloat((vf-vi)/parseFloat(a));
+                    t = returnObj.t;
                 }
             }
             
-            if (vi && t && a && !d){
+            if (vi && t && a && d === ""){
                 returnObj.d = parseFloat(vi*t) + parseFloat(.5 * a * t * t);
+                d = returnObj.d;
             }
-            else if (t && a && d && !vi){
+            else if (t && a && d && vi === ""){
                 if (t !== 0){
                     returnObj.vi = parseFloat(d/t) - parseFloat(a*t/2);
+                    vi = returnObj.vi;
                 }
             }
-            else if (a && d && vi && !t){
+            else if (a && d && vi && t === ""){
                 if (a !== 0){
                     returnObj.t = parseFloat(Math.sqrt(parseFloat(2*a*d) - parseFloat(1)) + parseFloat(vi)) / a;
+                    t = returnObj.t;
                 }
                 else if (a === 0){
                     returnObj.t = Math.abs(parseFloat(vi*d));
+                    t = returnObj.t;
                 }
             }
-            else if (d && t && vi && !a){
+            else if (d && t && vi && a === ""){
+                    console.log("here2");
                 returnObj.a = parseFloat(2*d) - (parseFloat(2*vi*t)) / parseFloat(t*t);
+                a = returnObj.a;
             }
             
-            if (vi && vf && t && !d){
+            if (vi && vf && t && d === ""){
                 returnObj.d = parseFloat(parseFloat(parseFloat(vi) + parseFloat(vf)) / 2) * parseFloat(t);
+                d = returnObj.d;
             }
-            else if (vf && t && d && !vi){
+            else if (vf && t && d && vi === ""){
                 returnObj.vi = parseFloat(parseFloat(parseFloat(2 * d) / parseFloat(t)) - parseFloat(vf));
+                vi = returnObj.vi;
             }
-            else if (t && d && vi && !vf){
+            else if (t && d && vi && vf === ""){
                 returnObj.vf = parseFloat(parseFloat(parseFloat(2 * d) / parseFloat(t)) - parseFloat(vi));
+                vf = returnObj.vf;
             }
-            else if (d && vi && vf && !t){
+            else if (d && vi && vf && t === ""){
                 returnObj.t = parseFloat(parseFloat(2 * d) / parseFloat(parseFloat(vf) + parseFloat(vi)));
-                console.log(returnObj.t);
+                t = returnObj.t;
             }
             
-            if (vi && a && d && !vf){
+            if (vi && a && d && vf === ""){
                 returnObj.vf = Math.sqrt(parseFloat(parseFloat(vi * vi) + parseFloat(2*a*d)));
+                vf = returnObj.vf;
             }
-            else if (a && d && vf && !vi){
+            else if (a && d && vf && vi === ""){
                 returnObj.vi = Math.abs(parseFloat(parseFloat(vf*vf) - parseFloat(2*a*d)));
+                vi = returnObj.vi;
             }
-            else if (d && vf && vi && !a){
+            else if (d && vf && vi && a === ""){
+                    console.log("here3");
                 returnObj.a = parseFloat(parseFloat(vf*vf) - parseFloat(vi*vi)) / parseFloat(2*d); 
+                a = returnObj.a;
             }
-            else if (vf && vi && a && !d){
+            else if (vf && vi && a && d === ""){
                 returnObj.d = parseFloat(parseFloat(vf*vf) - parseFloat(vi*vi)) / parseFloat(2*a); 
+                d = returnObj.d;
             }
             
             

@@ -1,14 +1,27 @@
-RESULT {
+.RESULT {
   height: 200px;
 }
 
+body {
+  background-color: lightslategrey;
+  position: relative;
+  min-height: 100%;
+}
 
+textArea {
+  font-size: 32px;
+}
 
 #form {
   text-align: center;
   margin:auto;
+  margin-top: 25px;
   border-radius: 10px;
   width: 50%;
+  background-color: lightgrey;
+  border-color: darkslategrey;
+  border-style: solid;
+  border-width: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 15px;
